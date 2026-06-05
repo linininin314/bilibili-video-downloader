@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilibili 视频下载器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>B站视频下载</h1>
+        </div>
+        
+        <div class="content">
+            <div id="loading" class="loading hidden">
+                <p>正在获取视频信息...</p>
+            </div>
+            
+            <div id="error" class="error hidden">
+                <p id="errorMessage"></p>
+            </div>
+            
+            <div id="videoInfo" class="video-info hidden">
+                <div class="info-item">
+                    <label>视频标题：</label>
+                    <p id="videoTitle"></p>
+                </div>
+                
+                <div class="info-item">
+                    <label>清晰度选择：</label>
+                    <select id="qualitySelect">
+                        <option value="">加载中...</option>
+                    </select>
+                </div>
+                
+                <div class="info-item">
+                    <label>视频格式：</label>
+                    <select id="formatSelect">
+                        <option value="mp4">MP4 (H.264)</option>
+                        <option value="hevc">HEVC (H.265)</option>
+                    </select>
+                </div>
+                
+                <div class="info-item">
+                    <label>音频选择：</label>
+                    <select id="audioSelect">
+                        <option value="">加载中...</option>
+                    </select>
+                </div>
+                
+                <div class="button-group">
+                    <button id="downloadBtn" class="btn btn-primary">下载视频</button>
+                    <button id="refreshBtn" class="btn btn-secondary">刷新信息</button>
+                </div>
+                
+                <div id="downloadProgress" class="progress hidden">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="progressText">下载进度: 0%</p>
+                </div>
+            </div>
+            
+            <div id="notBilibili" class="notice hidden">
+                <p>⚠️ 这不是 Bilibili 视频页面</p>
+                <p>请打开 Bilibili 视频页面后再使用此扩展</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>v1.0.0</p>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
